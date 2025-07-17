@@ -1,0 +1,267 @@
+/* 共通 */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 色 */
+
+.back-color-todo {
+    background-color: #EEEEEE;
+}
+
+.back-color-inProgress {
+    background-color: #FCE5CD;
+}
+
+.back-color-done {
+    background-color: #C9DAF8;
+}
+
+.color-todo {
+    background-color: #B7B7B7;
+    opacity: 1;
+}
+
+.color-inProgress {
+    background-color: #F6B26B;
+    opacity: 1;
+}
+
+.color-done {
+    background-color: #6D9EEB;
+    opacity: 1;
+}
+
+.color-todo:hover,
+.color-inProgress:hover,
+.color-done:hover {
+    opacity: 0.5;
+}
+
+/* ヘッダー */
+
+.header-wrapper {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.logo-sub {
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0;
+    border-bottom: 1px solid #333;
+}
+
+.header-button-wrapper {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+
+/* ホーム */
+
+.home-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 20px;
+}
+
+/* タスクエリア */
+
+.task-area {
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    height: 60vh;
+}
+
+.task-area-header-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 0;
+    border-bottom: 1px solid #333;
+}
+
+.task-area-header-title {
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 70%;
+}
+
+
+.task-area-header-count {
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 70%;
+}
+
+.task-area-body {}
+
+/* タスクリスト */
+
+.task-list {
+    padding-top: 10px;
+    width: 100%;
+}
+
+/* タスクアイテム */
+
+.task-item {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    /* padding: 0px 10px; */
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding-right: 10px;
+}
+
+.task-title {
+    font-size: 1.5rem;
+    text-align: left;
+    padding: 10px;
+    width: 80%;
+}
+
+.task-grab {
+    cursor: grab;
+    user-select: none;
+    font-size: 30px;
+}
+
+/* タスク追加 */
+
+.task-wrapper {
+    padding: 10px 0px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.task-form-wrapper {
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    height: 60vh;
+    /* background-color: #7c7c7c; */
+    margin: 0 auto;
+    border: 1px solid #333;
+}
+
+.task-header {
+    /* padding-left: 10px; */
+    text-align: center;
+}
+
+.task-header input {
+    width: 96%;
+    font-size: 1.2rem;
+    text-align: left;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #333;
+    outline: none;
+    font-weight: bold;
+}
+
+.task-body {
+    margin-top: 10px;
+}
+
+.task-body textarea {
+    width: 96%;
+    height: 50vh;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.7rem;
+    outline: none;
+}
+
+.task-footer {
+    padding: 10px;
+}
+
+
+
+/* ボタン */
+
+button {
+    padding: 5px;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+/* 追加用ボタン */
+
+button.top {
+    background-color: #4498f7;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 2.5rem;
+    width: 160px;
+    height: 70px;
+}
+
+/* 登録用ボタン */
+button.primary {
+    background-color: #4498f7;
+    color: #fff;
+    font-size: 2.5rem;
+    border-radius: 10px;
+    width: 160px;
+    height: 70px;
+}
+
+/* 編集用ボタン */
+button.secondary {
+    background-color: #19f566;
+    color: #fff;
+    font-size: 2.5rem;
+    border-radius: 10px;
+    width: 160px;
+    height: 70px;
+}
+
+/* 詳細用ボタン */
+
+button.thirdry {
+    background-color: #7c7c7c;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    width: 60px;
+}
