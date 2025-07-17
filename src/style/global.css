@@ -16,6 +16,10 @@ ul {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* 色 */
 
 .back-color-todo {
@@ -76,6 +80,49 @@ ul {
     position: absolute;
     right: 30px;
     top: 20px;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    gap: 10px;
+    padding-left: 10px;
+    background-color: #4498f7;
+    border-bottom: 1px solid #333;
+}
+
+.header-nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-nav-item {
+    background-color: #6eb1ff;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.header-nav-item:hover {
+    opacity: 0.5;
+}
+
+.header-nav-item {
+    content: '|';
+    color: #000;
+}
+
+.header-nav-item a {
+    color: #fff;
 }
 
 /* ホーム */
