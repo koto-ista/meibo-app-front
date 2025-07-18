@@ -14,6 +14,10 @@ interface Props {
 const EmployeeIndex = (props: Props) => {
   const navigate = useNavigate();
 
+  const onAdd = () => {
+    navigate('/employee/add');
+  };
+
   const onEdit = (id: number) => {
     console.log(id);
     navigate('/employee/detail/' + id);
@@ -27,7 +31,7 @@ const EmployeeIndex = (props: Props) => {
     <div className="employee-list-wrapper">
       <h1>従業員一覧</h1>
       <div className="employee-list-header">
-        <Button className="top" label="新規登録" />
+        <Button className="top" label="新規登録" onClick={onAdd} />
       </div>
       <div className="employee-list">
         <Table<Employee>

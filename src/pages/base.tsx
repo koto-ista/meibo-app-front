@@ -31,6 +31,11 @@ const employeeTableRawData: Employee[] = [
 
 const Base = () => {
   const [employees, setEmployees] = useState<Employee[]>(employeeTableRawData);
+
+  const addEmployee = (employee: Employee) => {
+    employee.id = employees.length + 1;
+    setEmployees([...employees, employee]);
+  };
   const editEmployee = (employee: Employee) => {
     setEmployees(employees.map(e => e.id === employee.id ? employee : e));
   }
@@ -43,7 +48,7 @@ const Base = () => {
       <Header />
       <Routes>
         <Route path="/employee" element={<EmployeeIndex data={employeeTableData} />} />
-        <Route path="/employee/add" element={<EmployeeAdd />} />
+        <Route path="/employee/add" element={<EmployeeAdd addEmployee={addEmployee} />} />
         <Route path="/employee/detail/:employeeId" element={<EmployeeDetail employees={employees} editEmployee={editEmployee} />} />
       </Routes>
     </div>

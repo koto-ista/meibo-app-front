@@ -1,7 +1,17 @@
 import React from 'react';
+import EmployeeForm from '../../modele/EmployeeForm';
+import { Employee } from '../base';
 
-const EmployeeAdd = () => {
-  return <div>Employee-Add</div>;
+interface Props {
+  addEmployee: (employee: Employee) => void;
+}
+
+const EmployeeAdd = (props: Props) => {
+  return (
+    <div>
+      <h1>従業員詳細</h1>
+      <EmployeeForm setEmployee={props.addEmployee} />
+    </div>
+  );
 };
-
 export default EmployeeAdd;
