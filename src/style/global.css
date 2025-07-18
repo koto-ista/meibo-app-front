@@ -135,43 +135,66 @@ a {
     padding: 0px 20px;
 }
 
-/* タスクエリア */
+/* 従業員一覧 */
 
-.task-area {
-    padding: 20px;
-    border-radius: 10px;
-    width: 30%;
-    height: 60vh;
+.employee-list-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 20px;
 }
 
-.task-area-header-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.employee-list-header {
+    display: flex;
+    justify-content: left;
     align-items: center;
-    margin: 0;
-    border-bottom: 1px solid #333;
+    gap: 10px;
 }
 
-.task-area-header-title {
-    font-size: 1.5rem;
-    text-align: center;
-    border-radius: 10px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    width: 70%;
+.employee-list {
+    box-sizing: border-box;
+    /* padding-top: 10px; */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
 }
 
-
-.task-area-header-count {
-    font-size: 2rem;
-    text-align: center;
-    border-radius: 10px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    width: 70%;
+/* テーブル */
+.list-table {
+    table-layout: auto;
+    width: 100%;
 }
 
-.task-area-body {}
+.list-table-header {
+    background-color: #4498f7;
+    color: #fff;
+}
+
+.list-table-body {
+    background-color: #fff;
+}
+
+.list-table-id {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100px;
+}
+
+.list-table-data {
+    width: auto;
+}
+
+.list-table-operation {
+    max-width: 200px;
+    position: sticky;
+    right: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    white-space: nowrap;
+    gap: 10px;
+}
 
 /* タスクリスト */
 
@@ -278,9 +301,9 @@ button.top {
     background-color: #4498f7;
     color: #fff;
     border-radius: 10px;
-    font-size: 2.5rem;
+    font-size: 2rem;
     width: 160px;
-    height: 70px;
+    height: 60px;
 }
 
 /* 登録用ボタン */
