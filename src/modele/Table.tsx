@@ -6,10 +6,9 @@ export interface TableProps<T> {
   data: {
     header: { [key: string]: string };
     rows: T[];
-  
+  }
   onEdit: (id: number) => void;
   onDelete: (id: number) => void;
-  }
 };
 
 /**
@@ -22,15 +21,15 @@ export interface TableProps<T> {
 const Table = <T extends { [key: string]: any }>(props: TableProps<T>) => {
 
   const handleEdit = (id: number) => {
-    props.data.onEdit(id);
+    props.onEdit(id);
   }
   const handleDelete = (id: number) => {
-    props.data.onDelete(id);
+    props.onDelete(id);
   }
   return (
     <table className="list-table">
       <thead className="list-table-header">
-        <tr>
+        <tr key={props.data.header.id}>
           {Object.keys(props.data.header).map((key, index) => (
             key === 'id' ? <th key={index} className="list-table-id">{props.data.header[key]}</th> :
               key === 'operation' ? <th key={index} className="list-table-operation">{props.data.header[key]}</th> :
@@ -40,7 +39,7 @@ const Table = <T extends { [key: string]: any }>(props: TableProps<T>) => {
       </thead>
       <tbody className="list-table-body">
         {props.data.rows.map((row) => (
-          <tr>
+          <tr key={row.id}>
             {Object.keys(row).map((key, index) => (
               key === 'id' ?
                 <td key={index} className="list-table-id">{(row as any)[key]}</td> :

@@ -1,9 +1,22 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import EmployeeForm from '../../modele/EmployeeForm';
+import { Employee } from '../base';
 
-const EmployeeDetail = () => {
+interface Props {
+  employees: Employee[];
+  editEmployee: (employee: Employee) => void;
+}
+
+const EmployeeDetail = (props: Props) => {
   const { employeeId } = useParams();
-  return <div>Employee-Detail {employeeId}</div>;
+  const employee = props.employees.find((employee) => employee.id === Number(employeeId));
+  return (
+    <div>
+      <h1>従業員詳細</h1>
+      <EmployeeForm employee={employee} setEmployee={props.editEmployee} />
+    </div>
+  );
 };
 
 export default EmployeeDetail;

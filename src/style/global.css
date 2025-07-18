@@ -159,6 +159,13 @@ a {
     width: 100%;
 }
 
+/* 従業員詳細 */
+.employee-detail-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 20px;
+}
+
 /* テーブル */
 .list-table {
     table-layout: auto;
