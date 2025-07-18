@@ -13,7 +13,7 @@ const Base = () => {
       <Routes>
         <Route path="/" element={<Employee />} />
         <Route path="/employee/add" element={<EmployeeAdd />} />
-        <Route path="/employee/detail" element={<EmployeeDetail />} />
+        <Route path="/employee/detail/:employeeId" element={<EmployeeDetail />} />
       </Routes>
     </div>
   );

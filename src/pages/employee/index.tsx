@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../../component/Button';
 import Table, { TableProps } from '../../modele/Table';
+import { useNavigate } from 'react-router-dom';
 
 type Employee = {
   id: number;
@@ -24,16 +25,25 @@ const employeeTableRawData: Employee[] = [
   { id: 3, name: '山田太郎', company: '株式会社テスト', email: 'yamada@example.com' },
 ]
 
-// テーブルのデータをテーブルコンポーネントに渡す
-const employeeTableData: TableProps<Employee> = {
-    data: {
-      header: employeeTableHeader,
-      rows: employeeTableRawData,
-    }
-}
-
-
 const Employee = () => {
+  const navigate = useNavigate();
+
+  const onEdit = (id: number) => {
+    console.log(id);
+    navigate('/employee/detail/' + id);
+  }
+  const onDelete = (id: number) => {
+    console.log(id);
+  }
+  // テーブルのデータをテーブルコンポーネントに渡す
+const employeeTableData: TableProps<Employee> = {
+  data: {
+    header: employeeTableHeader,
+    rows: employeeTableRawData,
+    onEdit,
+    onDelete,
+  }
+}
   return (
     <div className="employee-list-wrapper">
       <h1>従業員一覧</h1>
@@ -41,7 +51,8 @@ const Employee = () => {
         <Button className="top" label="新規登録" />
       </div>
       <div className="employee-list">
-        <Table<Employee> data={employeeTableData.data} />
+        <Table<Employee>
+          data={employeeTableData.data} />
       </div>
     </div>
   );
