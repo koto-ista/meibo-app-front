@@ -10,7 +10,7 @@ const EmployeeAdd = (props: Props) => {
   return (
     <div className="employee-add-wrapper">
       <h1>従業員詳細</h1>
-      <EmployeeForm setEmployee={props.addEmployee} />
+      <EmployeeForm setEmployee={props.addEmployee} label="登録" />
     </div>
   );
 };

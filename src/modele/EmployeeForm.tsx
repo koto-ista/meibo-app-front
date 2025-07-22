@@ -6,6 +6,7 @@ import Button from '../component/Button';
 interface Props {
     employee?: Employee;
     setEmployee: (employee: Employee) => void;
+    label: string;
 }
 
 const TaskForm = (props: Props) => {
@@ -75,7 +76,7 @@ const TaskForm = (props: Props) => {
                     </div>
                 </div>
                 <div >
-                    <Button className="primary" label="登録" />
+                    <Button className="primary" label={props.label} />
                 </div>
             </form>
         </div>

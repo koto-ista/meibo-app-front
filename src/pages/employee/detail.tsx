@@ -14,7 +14,7 @@ const EmployeeDetail = (props: Props) => {
   return (
     <div className="employee-detail-wrapper">
       <h1>従業員詳細</h1>
-      <EmployeeForm employee={employee} setEmployee={props.editEmployee} />
+      <EmployeeForm employee={employee} setEmployee={props.editEmployee} label="更新" />
     </div>
   );
 };
