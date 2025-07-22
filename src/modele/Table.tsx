@@ -47,7 +47,7 @@ const Table = <T extends { [key: string]: any }>(props: TableProps<T>) => {
             ))}
             <td className="list-table-operation">
               <Button className="thirdry" label="編集" onClick={() => handleEdit((row as any).id)} />
-              <Button className="thirdry" label="削除" onClick={() => handleDelete((row as any).id)} />
+              <Button className="delete" label="削除" onClick={() => handleDelete((row as any).id)} />
             </td>
           </tr>
         ))}

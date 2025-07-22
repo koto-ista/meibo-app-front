@@ -39,6 +39,9 @@ const Base = () => {
   const editEmployee = (employee: Employee) => {
     setEmployees(employees.map(e => e.id === employee.id ? employee : e));
   }
+  const deleteEmployee = (id: number) => {
+    setEmployees(employees.filter(e => e.id !== id));
+  }
   const employeeTableData = {
     header: employeeTableHeader,
     rows: employees,
@@ -47,7 +50,7 @@ const Base = () => {
     <div>
       <Header />
       <Routes>
-        <Route path="/employee" element={<EmployeeIndex data={employeeTableData} />} />
+        <Route path="/employee" element={<EmployeeIndex data={employeeTableData} deleteEmployee={deleteEmployee} />} />
         <Route path="/employee/add" element={<EmployeeAdd addEmployee={addEmployee} />} />
         <Route path="/employee/detail/:employeeId" element={<EmployeeDetail employees={employees} editEmployee={editEmployee} />} />
       </Routes>
