@@ -166,6 +166,51 @@ a {
     padding: 10px 20px;
 }
 
+/* 従業員追加 */
+.employee-add-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+/* 従業員 フォーム */
+.employee-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.employee-form-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    height: 40px;
+    font-size: 1.5rem;
+}
+
+.employee-form-item label {
+    min-width: 200px;
+    width: 100px;
+    text-align: left;
+}
+
+.employee-form-item input {
+    min-width: 300px;
+    max-width: 500px;
+    font-size: 1.5rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.employee-form-input::before {
+    content: '：';
+    color: #000;
+    font-size: 1.5rem;
+}
+
 /* テーブル */
 .list-table {
     table-layout: auto;

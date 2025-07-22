@@ -12,7 +12,7 @@ const EmployeeDetail = (props: Props) => {
   const { employeeId } = useParams();
   const employee = props.employees.find((employee) => employee.id === Number(employeeId));
   return (
-    <div>
+    <div className="employee-detail-wrapper">
       <h1>従業員詳細</h1>
       <EmployeeForm employee={employee} setEmployee={props.editEmployee} />
     </div>

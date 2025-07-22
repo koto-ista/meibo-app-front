@@ -39,18 +39,39 @@ const TaskForm = (props: Props) => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <div >
-                    <div >
-                        <label>氏名 ：</label>
-                        <input type="text" placeholder="名前" value={employee.name} onChange={handleNameChange} />
+                <div className="employee-form-wrapper">
+                    <div className="employee-form-item">
+                        <label>氏名</label>
+                        <div className="employee-form-input">
+                        <input
+                            type="text"
+                            placeholder="名前"
+                            value={employee.name}
+                            onChange={handleNameChange}
+                            required />
+                        </div>
                     </div>
-                    <div >
-                        <label>所属企業 ：</label>
-                        <input type="text" placeholder="所属企業" value={employee.company} onChange={handleCompanyChange} />
+                    <div className="employee-form-item">
+                        <label>所属企業</label>
+                        <div className="employee-form-input">
+                        <input
+                            type="text"
+                            placeholder="所属企業"
+                            value={employee.company}
+                            onChange={handleCompanyChange}
+                            required />
+                        </div>
                     </div>
-                    <div >
-                        <label>メールアドレス ：</label>
-                        <input type="email" placeholder="メールアドレス" value={employee.email} onChange={handleEmailChange} />
+                    <div className="employee-form-item">
+                        <label>メールアドレス</label>
+                        <div className="employee-form-input">
+                        <input
+                            type="email"
+                            placeholder="メールアドレス"
+                            value={employee.email}
+                            onChange={handleEmailChange}
+                            required />
+                        </div>
                     </div>
                 </div>
                 <div >

@@ -8,7 +8,7 @@ interface Props {
 
 const EmployeeAdd = (props: Props) => {
   return (
-    <div>
+    <div className="employee-add-wrapper">
       <h1>従業員詳細</h1>
       <EmployeeForm setEmployee={props.addEmployee} />
     </div>
