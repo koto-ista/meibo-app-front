@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import EmployeeForm from '../../modele/EmployeeForm';
-import { Employee } from '../base';
+import { Employee } from '../../Router/employeeRouter';
 
 interface Props {
   employees: Employee[];

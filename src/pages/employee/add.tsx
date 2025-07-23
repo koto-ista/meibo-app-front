@@ -1,6 +1,6 @@
 import React from 'react';
 import EmployeeForm from '../../modele/EmployeeForm';
-import { Employee } from '../base';
+import { Employee } from '../../Router/employeeRouter';
 
 interface Props {
   addEmployee: (employee: Employee) => void;

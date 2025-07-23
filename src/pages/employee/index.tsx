@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from '../../component/Button';
 import Table, { TableProps } from '../../modele/Table';
 import { useNavigate } from 'react-router-dom';
-import { Employee } from '../base';
+import { Employee } from '../../Router/employeeRouter';
 import Modal from '../../modele/modal';
 
 interface Props {

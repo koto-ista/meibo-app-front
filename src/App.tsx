@@ -1,13 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Base from './pages/base';
 import './style/global.css';
+import BaseRoot from './Router/baseRoot';
 
 function App() {
   return (
     <div className="App">
-      <Base />  
+      <BaseRoot />  
     </div>
   );
 }
