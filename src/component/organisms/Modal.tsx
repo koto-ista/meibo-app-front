@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../component/Button';
+import Button from '../atoms/Button';
 
 interface Props {
   message: string;

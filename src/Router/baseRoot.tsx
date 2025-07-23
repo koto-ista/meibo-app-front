@@ -1,11 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import EmployeeRouter from './employeeRouter';
-import Header from '../pages/Header';
+import EmployeeRouter from '../component/pages/employeeRouter';
+import Header from '../component/organisms/Header';
 
 const BaseRoot = () => {
   return (
     <div>
-      <Header />
       <Routes>
         <Route path="/employee/*" element={<EmployeeRouter />} />
       </Routes>

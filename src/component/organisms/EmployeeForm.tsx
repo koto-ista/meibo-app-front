@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Employee } from '../Router/employeeRouter';
-import Button from '../component/Button';
+import { Employee } from '../pages/employeeRouter';
+import Button from '../atoms/Button';
 
 interface Props {
   employee?: Employee;

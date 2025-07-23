@@ -1,6 +1,6 @@
 import React from 'react';
-import Employee from '../pages/employee';
-import Button from '../component/Button';
+import Employee from './employee';
+import Button from '../atoms/Button';
 
 export interface TableProps<T> {
   data: {
@@ -31,23 +31,22 @@ const Table = <T extends { [key: string]: any }>(props: TableProps<T>) => {
       <thead className="list-table-header">
         <tr key={props.data.header.id}>
           {Object.keys(props.data.header).map((key, index) => (
-            key === 'id' ? <th key={index} className="list-table-id">{props.data.header[key]}</th> :
-              key === 'operation' ? <th key={index} className="list-table-operation">{props.data.header[key]}</th> :
-                <th key={index} className="list-table-data">{props.data.header[key]}</th>
+            // key === 'id' ? <th key={index} className="list-table-id">{props.data.header[key]}</th> :
+              <th key={index} className="list-table-data">{props.data.header[key]}</th>
           ))}
+        <th className="list-table-operation">操作</th>
         </tr>
       </thead>
       <tbody className="list-table-body">
         {props.data.rows.map((row) => (
           <tr key={row.id}>
             {Object.keys(row).map((key, index) => (
-              key === 'id' ?
-                <td key={index} className="list-table-id">{(row as any)[key]}</td> :
-                <td key={index} className="list-table-data">{(row as any)[key]}</td>
+              // key === 'id' ? <td key={index} className="list-table-id">{(row as any)[key]}</td> :
+                <td key={index} className="list-table-data">{row[key]}</td>
             ))}
             <td className="list-table-operation">
-              <Button className="thirdry" label="編集" onClick={() => handleEdit((row as any).id)} />
-              <Button className="delete" label="削除" onClick={() => handleDelete((row as any).id)} />
+              <Button className="thirdry" label="編集" onClick={() => handleEdit(row.id)} />
+              <Button className="delete" label="削除" onClick={() => handleDelete(row.id)} />
             </td>
           </tr>
         ))}

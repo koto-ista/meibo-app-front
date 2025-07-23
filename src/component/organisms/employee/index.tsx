@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Button from '../../component/Button';
-import Table, { TableProps } from '../../modele/Table';
+import Button from '../../atoms/Button';
+import Table, { TableProps } from '../OprerationTable';
 import { useNavigate } from 'react-router-dom';
-import { Employee } from '../../Router/employeeRouter';
-import Modal from '../../modele/modal';
+import { Employee } from '../../pages/employeeRouter';
+import Modal from '../Modal';
 
 interface Props {
   data: {
@@ -47,7 +47,6 @@ const EmployeeIndex = (props: Props) => {
 
   return (
     <div className="employee-list-wrapper">
-      <h1>従業員一覧</h1>
       <div className="employee-list-header">
         <Button className="top" label="新規登録" onClick={onAdd} />
       </div>
