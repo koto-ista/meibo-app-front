@@ -4,6 +4,7 @@ import EmployeeAdd from '../organisms/employee/add';
 import EmployeeDetail from '../organisms/employee/detail';
 import { useState } from 'react';
 import EmployeeTemplate from '../templates/employeeTemplate';
+import { useEmployees } from '../../hook/useEmployees';
 
 export type Employee = {
   id: number;
@@ -27,24 +28,11 @@ const employeeTableRawData: Employee[] = [
 ]
 
 const EmployeeRouter = () => {
-  const [employees, setEmployees] = useState<Employee[]>(employeeTableRawData);
+  const { employees, addEmployee, editEmployee, deleteEmployee } = useEmployees(employeeTableRawData);
 
-  const addEmployee = (employee: Employee) => {
-    employee.id = employees.length + 1;
-    setEmployees([...employees, employee]);
-  }
-  const editEmployee = (employee: Employee) => {
-    setEmployees(employees.map(e => e.id === employee.id ? employee : e));
-  }
-  const deleteEmployee = (id: number) => {
-    setEmployees(employees.filter(e => e.id !== id));
-  }
   const employeeTableData = {
     header: employeeTableHeader,
     rows: employees,
-  }
-  const getEmployee = (id: number) => {
-    return employees.find(e => e.id === id);
   }
 
   return (

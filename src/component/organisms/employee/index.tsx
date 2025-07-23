@@ -4,6 +4,7 @@ import Table, { TableProps } from '../OprerationTable';
 import { useNavigate } from 'react-router-dom';
 import { Employee } from '../../pages/employeeRouter';
 import Modal from '../Modal';
+import { useModal } from '../../../hook/useModel';
 
 interface Props {
   data: {
@@ -15,35 +16,36 @@ interface Props {
 
 const EmployeeIndex = (props: Props) => {
   const navigate = useNavigate();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { isOpen, open, close } = useModal();
   const [deleteId, setDeleteId] = useState(0);
   const [deleteName, setDeleteName] = useState('');
+
+  // ボタンを押した時の処理
+  // 新規登録ボタンを押した時の処理
   const onAdd = () => {
     navigate('/employee/add');
   };
-
-  // ボタンを押した時の処理
   // 編集ボタンを押した時の処理
   const onEdit = (id: number) => {
     console.log(id);
     navigate('/employee/detail/' + id);
-  }
+  };
   // 削除ボタンを押した時の処理
   const onDelete = (id: number) => {
     console.log(id);
     setDeleteId(id);
     setDeleteName(props.data.rows.find(e => e.id === id)?.name || '');
-    setIsModalOpen(true);
-  }
+    open();
+  };
+
   // モーダル用の関数
   const onOK = () => {
     props.deleteEmployee(deleteId);
-    setIsModalOpen(false);
-  }
+    close();
+  };
   const onCancel = () => {
-    setIsModalOpen(false);
-  }
-  // テーブルのデータをテーブルコンポーネントに渡す
+    close();
+  };
 
   return (
     <div className="employee-list-wrapper">
@@ -61,7 +63,7 @@ const EmployeeIndex = (props: Props) => {
           message={`${deleteName} を削除しますか？`}
           onOK={onOK}
           onCancel={onCancel}
-          showFlag={isModalOpen} />
+          showFlag={isOpen} />
     </div>
   );
 };

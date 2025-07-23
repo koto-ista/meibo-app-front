@@ -1,6 +1,24 @@
 import React from 'react';
+import HeaderTab from '../molecules/HeaderTab';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
+  const headerTabList = [
+    { label: '従業員', jumpList: [
+      { label: '従業員一覧', onClick: () => navigate('/employee') },
+      { label: '従業員登録', onClick: () => navigate('/employee/add') },
+    ] },
+    { label: '顧客', jumpList: [
+      { label: '顧客一覧', onClick: () => navigate('/customer') },
+      { label: '顧客登録', onClick: () => navigate('/customer/add') },
+    ] },
+    { label: '取引先', jumpList: [
+      { label: '取引先一覧', onClick: () => navigate('/customer') },
+      { label: '取引先登録', onClick: () => navigate('/customer/add') },
+    ] },
+  ];
+  
   return (
     <header>
       <div className="header-wrapper">
@@ -9,9 +27,9 @@ const Header = () => {
         {/* ナビゲーション要素として切り出す */}
         <nav className="header-nav">
           <ul className="header-nav-list">
-            <li className="header-nav-item"><a href="/">従業員</a></li>
-            <li className="header-nav-item"><a href="/">顧客</a></li>
-            <li className="header-nav-item"><a href="/">取引先</a></li>
+            {headerTabList.map((item) => (
+              <HeaderTab key={item.label} label={item.label} jumpList={item.jumpList} />
+            ))}
           </ul>
         </nav>
       </div>
